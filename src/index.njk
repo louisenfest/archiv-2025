@@ -16,15 +16,15 @@ title: Louisenfest Archiv
 <body>
   <h1>🎉 Louisenfest Archiv</h1>
   <div><a href="/admin/">Medien hochladen (Admin)</a></div>
-  <div class="gallery">
-    {% for file in collections.mediaFiles %}
-      {% set ext = file.name.split('.').pop().toLowerCase() %}
-      {% if ext in ["jpg","jpeg","png","webp","gif"] %}
-        <img src="{{ file.url }}" alt="{{ file.name }}">
-      {% else if ext in ["mp4","webm"] %}
-        <video controls src="{{ file.url }}"></video>
-      {% endif %}
-    {% endfor %}
-  </div>
+<div class="gallery">
+  {% for file in collections.mediaFiles %}
+    {% set ext = file.name.split('.').pop().toLowerCase() %}
+    {% if ext in ["jpg","jpeg","png","webp","gif"] %}
+      <img src="{{ file.url }}" alt="{{ file.name }}">
+    {% elif ext in ["mp4","webm"] %}
+      <video controls src="{{ file.url }}"></video>
+    {% endif %}
+  {% endfor %}
+</div>
 </body>
 </html>
