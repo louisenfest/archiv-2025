@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: DEIN_GITHUB_USERNAME/luisenfest-archiv
+  branch: main
+media_folder: "content/media"     # Wo die Medien in deinem Repo gespeichert werden
+public_folder: "/content/media"   # URL-Pfad für Medien auf der Website
+
+collections:
+  - name: "media"
+    label: "Medien"
+    folder: "content/media"
+    create: true
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Datei", name: "file", widget: "file"}
