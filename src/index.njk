@@ -20,9 +20,9 @@ title: Louisenfest Archiv
   {% for file in collections.mediaFiles %}
     {% set ext = file.name.split('.').pop().toLowerCase() %}
     {% if ext in ["jpg","jpeg","png","webp","gif"] %}
-      <img src="{{ file.url }}" alt="{{ file.name }}">
+      <img src="/media/{{ file.name }}" alt="{{ file.name }}">
     {% elif ext in ["mp4","webm"] %}
-      <video controls src="{{ file.url }}"></video>
+      <video controls src="/media/{{ file.name }}"></video>
     {% endif %}
   {% endfor %}
 </div>
