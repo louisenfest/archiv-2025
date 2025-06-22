@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: DEIN_GITHUB_USERNAME/luisenfest-archiv
+  repo: louisenfest/lou-archiv-2025
   branch: main
 media_folder: "content/media"     # Wo die Medien in deinem Repo gespeichert werden
 public_folder: "/content/media"   # URL-Pfad für Medien auf der Website
