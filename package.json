@@ -1,0 +1,10 @@
+{
+  "name": "lou-archiv",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
