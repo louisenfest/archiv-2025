@@ -1,16 +1,8 @@
 const fs = require("fs");
-const path = require("path");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("content/media");
-  return {
-    dir: {
-      input: "src",
-      output: "_site"
-    }
-  };
-};
 
   eleventyConfig.addCollection("mediaFiles", function(collectionApi) {
     const mediaDir = "content/media";
@@ -23,6 +15,9 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
-    dir: { input: "src", output: "_site" },
+    dir: {
+      input: "src",
+      output: "_site"
+    }
   };
 };
