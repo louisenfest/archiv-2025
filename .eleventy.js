@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/upload.html");
   eleventyConfig.addPassthroughCopy("content/media");
 
   eleventyConfig.addCollection("mediaFiles", function(collectionApi) {
