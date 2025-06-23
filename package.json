@@ -1,11 +1,16 @@
 {
-  "name": "lou-archiv",
+  "name": "a",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "build": "eleventy"
+    "build": "eleventy",
+    "start": "eleventy --serve"
   },
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "node-fetch": "^2.6.9"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1"
   }
 }
