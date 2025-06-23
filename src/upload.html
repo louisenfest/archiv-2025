@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Datei-Upload</title>
+</head>
+<body>
+  <h1>Datei hochladen</h1>
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Hochladen</button>
+
+  <p id="status"></p>
+
+  <script>
+    async function uploadFile() {
+      const fileInput = document.getElementById("fileInput");
+      const file = fileInput.files[0];
+      if (!file) {
+        document.getElementById("status").textContent = "Bitte Datei auswählen.";
+        return;
+      }
+
+      // Beispiel: Du sendest die Datei an deine eigene Upload-API oder Firebase Function
+      const formData = new FormData();
+      formData.append("file", file);
+
+      try {
+        const res = await fetch("https://dein-upload-endpunkt.com/upload", {
+          method: "POST",
+          body: formData,
+          // Optional: Auth Header hier anhängen (z. B. Firebase Token)
+        });
+
+        if (!res.ok) throw new Error("Fehler beim Upload");
+
+        document.getElementById("status").textContent = "Upload erfolgreich!";
+      } catch (err) {
+        document.getElementById("status").textContent = "Fehlgeschlagen: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
