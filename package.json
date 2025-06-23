@@ -1,14 +1,9 @@
 {
   "name": "lou-archiv",
   "version": "1.0.0",
-  "description": "Medienarchiv fürs Louisenfest",
-  "main": "eleventy.js",
   "scripts": {
     "build": "eleventy"
   },
-  "keywords": [],
-  "author": "du 😎",
-  "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "node-fetch": "^2.6.9"

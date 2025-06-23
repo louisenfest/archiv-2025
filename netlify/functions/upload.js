@@ -9,7 +9,7 @@ exports.handler = async function(event) {
   const bodyBuffer = Buffer.from(event.body, "base64");
   const parts = bodyBuffer.toString().split(`--${boundary}`);
 
-  const filePart = parts.find(part => part.includes("Content-Disposition: form-data; name=\"file\""));
+  const filePart = parts.find(part => part.includes('Content-Disposition: form-data; name="file"'));
   if (!filePart) return { statusCode: 400, body: "No file provided" };
 
   const filenameMatch = /filename="(.+?)"/.exec(filePart);
