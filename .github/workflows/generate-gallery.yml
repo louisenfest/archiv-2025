@@ -11,19 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-    - name: Commit gallery.json
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add public/gallery.json || true
-        git diff --cached --quiet || git commit -m "Auto: gallery.json erstellt"
-        git push
-
+      - name: Generate gallery.json
+        run: |
+          mkdir -p public
+          echo '{ "images": [' > public/gallery.json
+          for f in media/*; do
+            echo "  \"https://louisenfest.github.io/lou-archiv-2025/$f\"," >> public/gallery.json
+          done
+          sed -i '$ s/,$//' public/gallery.json
+          echo ']}' >> public/gallery.json
 
       - name: Commit gallery.json
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add public/gallery.json
-          git commit -m "Auto: gallery.json erstellt" || echo "nichts zu committen"
+          git add public/gallery.json || true
+          git diff --cached --quiet || git commit -m "Auto: gallery.json erstellt"
           git push
