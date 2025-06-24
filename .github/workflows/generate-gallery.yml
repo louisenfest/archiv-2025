@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'media/**'
+  workflow_dispatch:
 
 jobs:
   generate:
